@@ -32,7 +32,9 @@ oauth_token_secret text
 );```
 
 
-Then add your stuff in app.py Database.initialise(database='***', host='****', user='****', password='****')
+Then add your stuff in app.py 
+
+```Database.initialise(database='', host='', user='', password='')```
 
   
   ![search](https://img-host.org.ua/images/1jvj.png)
