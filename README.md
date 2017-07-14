@@ -31,6 +31,7 @@ oauth_token text,
 oauth_token_secret text
 );```
 
+
 Then add your stuff in app.py Database.initialise(database='***', host='****', user='****', password='****')
 
   
