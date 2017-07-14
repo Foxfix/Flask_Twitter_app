@@ -21,6 +21,17 @@ Then run the app.py file.
   
 Follow the http://127.0.0.1:4995/
 
+I use pgAdmin for Postgresql. You need to create your database. Then create a table.
+
+
+```CREATE TABLE users(
+id SERIAL PRIMARY KEY,
+screen_name text,
+oauth_token text,
+oauth_token_secret text
+);```
+
+Then add your stuff in app.py Database.initialise(database='***', host='****', user='****', password='****')
 
   
   ![search](https://img-host.org.ua/images/1jvj.png)
