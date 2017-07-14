@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap-social.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+<div class="container" id="home">
+{% if session['screen_name'] %}
+<div class="col-sm-4 offset-sm-4">
+    <button type="button" class="btn btn-default" aria-haspopup="true" aria-expanded="false">
+        <a href="{{ url_for('profile') }}"><i class="fa fa-search" aria-hidden="true"></i>Search</a>
+    </button>
+    <button type="button" class="btn btn-default" aria-haspopup="true" aria-expanded="false">
+        <a role="button" href="{{ url_for('logout') }}"><i class="fa fa-sign-out" aria-hidden="true"></i>Logout</a>
+    </button>
+</div>
+{% elif not session['screen_name'] %}
+<div class="col-sm-4 offset-sm-4">
+    <a class="btn btn-block btn-social btn-twitter" href="{{ url_for('twitter_login') }}"><span class="fa fa-twitter"></span>Login with Twitter</a><br>
+</div>
+{% endif %}
+</div>
+</div>
+</body>
+</html>
