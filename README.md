@@ -1,43 +1,84 @@
-# Twitter app
+# Flask Twitter App 🐦
 
-This app works with Twitter API. There's a few steps in order to log in with Twitter.
-The first thing is to create a consumer. The consumer is an object which represents our application.
-Next is to create a client. The client get the access token.
-If user has not yet been created, this app creates user and save it in the database. (Postgresql)
-I use Twitter api to retrieve the latest tweets, what I searching.
-After that I adding sentiment analysis with another API and noted tweets in different colors.
+[![Python](https://img.shields.io/badge/python-3.10-blue)](https://www.python.org/)
+[![Flask](https://img.shields.io/badge/Flask-2.x-orange)](https://flask.palletsprojects.com/)
+[![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 
-**$ git clone https://github.com/Foxfix/Flask_Twitter_app.git**
-  
-**$ cd Flask_Twitter_app**
-  
-In your virtualenv install 
+A simple Flask application that integrates with the Twitter API, retrieves tweets, performs sentiment analysis, and visualizes them.
 
-**$ pip install -r requirements.txt**
-  
-Then run the app.py file. 
+---
 
-**$ python app.py**
-  
-Follow the http://127.0.0.1:4995/
+## Features ✨
 
-![search](https://img-host.org.ua/images/1jvj.png)
-  
-![search](https://img-host.org.ua/images/2gkg.png)
+- Log in with Twitter using OAuth
+- Retrieve latest tweets based on search queries
+- Perform sentiment analysis on tweets
+- Color-coded tweets by sentiment
+- PostgreSQL database for user and tweet management
+- Simple web interface using Flask
 
-I use pgAdmin for Postgresql. You need to create your database. Then create a table.
-Then add your stuff in app.py 
-```Database.initialise(database='', host='', user='', password='')```
+---
+
+## Installation ⚡
+
+Clone the repository:
+
+```bash
+git clone https://github.com/Foxfix/Flask_Twitter_app.git
+cd Flask_Twitter_app
+```
+
+Create and activate a virtual environment:
+
+```
+python -m venv venv
+source venv/bin/activate   # Linux/Mac
+venv\Scripts\activate      # Windows
+```
+
+Install dependencies:
+```pip install -r requirements.txt```
+
+## Configuration 🛠️
+
+1. Создай Twitter developer account и получи **consumer keys**.
+2. Создай PostgreSQL базу и таблицу:
 
 
-    CREATE TABLE users(
+```sql
+CREATE TABLE users(
     id SERIAL PRIMARY KEY,
     screen_name text,
     oauth_token text,
     oauth_token_secret text
-    );
+);
+```
+Update your app.py with database credentials:
+
+```
+Database.initialise(database='your_db', host='localhost', user='your_user', password='your_password')
+```
+
+Usage 🚀
+
+Run the Flask app:
+```python app.py```
+
+Open your browser at http://127.0.0.1:4995
+
+Technologies 🛠️
+
+Python 3.10+
+Flask
+PostgreSQL
+Twitter API
+Sentiment Analysis API
+
+License 📄
+
+This project is licensed under the MIT License.
 
 
 
 
- 
+
